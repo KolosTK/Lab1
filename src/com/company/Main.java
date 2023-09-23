@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
     static public void ShowAllBooks(List<Book> bookCollection) {
-        Book GlobalBook = new Book();
+        Book GlobalBook ;
 
         for (int i = 0; i < bookCollection.size(); i++) {
             GlobalBook = bookCollection.get(i);
@@ -15,7 +15,7 @@ public class Main {
     }
 
     static public void SearchByName(String nameOfBook, List<Book> bookCollection) {
-        Book GlobalBook = new Book();
+        Book GlobalBook ;
 
         boolean result = false;
         for (int i = 0; i < bookCollection.size(); i++) {
@@ -25,7 +25,7 @@ public class Main {
                 System.out.println("Name of book : " + GlobalBook.name + "\tAuthor : " + GlobalBook.author + "\tISBN : " + GlobalBook.ISBN + "\t Year : " + GlobalBook.yearOfPublishing);
             }
         }
-        if (result==false)
+        if (!result)
         {
             System.out.println("This book is not exist");
         }
@@ -44,7 +44,7 @@ public class Main {
                 break;
             }
         }
-        if(result == false)
+        if(!result)
         {
             System.out.println("Incorrect ISBN number");
         }
@@ -53,7 +53,7 @@ public class Main {
 
     public static void main(String[] args) {
         //First task
-        List<Book> bookCollection = new ArrayList<Book>();
+        List<Book> bookCollection = new ArrayList<>();
         Book first = new Book();
         bookCollection.add(first);
 
@@ -76,7 +76,7 @@ public class Main {
 
         String nameOfSearchingBook1 = "The Great Gatsby";
         SearchByName(nameOfSearchingBook1, bookCollection);
-        System.out.println("\nSecond try :\n");
+        System.out.println("\nSecond try :");
         String nameOfSearchingBook2 = "The Gre  at Gatsby";
         SearchByName(nameOfSearchingBook2, bookCollection);
         System.out.println("\n");
