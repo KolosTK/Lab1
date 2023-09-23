@@ -1,11 +1,14 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Book {
-    private String name,
+    public String name,
             author,
             ISBN;
-    private int yearOfPublishing;
-
+    public int yearOfPublishing;
+    private List<Book> bookCollection = new ArrayList<Book>();
 
     public void AddNewBook(String name, String author, String ISBN, int yearOfPublishing) {
         this.name = name;
@@ -13,9 +16,14 @@ public class Book {
         this.ISBN = ISBN;
         this.yearOfPublishing = yearOfPublishing;
     }
-    public void ShowAllBooks()
-    {
-        System.out.println("Name of book : "+name+"\tAuthor : "+author+"\tISBN : "+ISBN+"\t Year : "+yearOfPublishing);
+
+    public void ShowAllBooks(List<Book> bookCollection) {
+        Book GlobalBook = new Book();
+
+        for (int i = 0; i < bookCollection.size(); i++) {
+            GlobalBook = bookCollection.get(i);
+            System.out.println("Name of book : " + GlobalBook.name + "\tAuthor : " + GlobalBook.author + "\tISBN : " + GlobalBook.ISBN + "\t Year : " + GlobalBook.yearOfPublishing);
+        }
     }
 
 }
