@@ -13,5 +13,9 @@ public class Book {
         this.ISBN = ISBN;
         this.yearOfPublishing = yearOfPublishing;
     }
+    public void ShowAllBooks()
+    {
+        System.out.println("Name of book : "+name+"\tAuthor : "+author+"\tISBN : "+ISBN+"\t Year : "+yearOfPublishing);
+    }
 
 }
